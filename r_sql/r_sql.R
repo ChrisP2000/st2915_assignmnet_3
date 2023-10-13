@@ -29,7 +29,7 @@ dbWriteTable(db, 'airStoredb', airStore)
 
 #Listing out ur database 
 dbListTables(db)
-
+    
 # bGetQuery(conn,"SELECT car_names, hp, cyl FROM cars_data WHERE cyl = 8")
 dbGetQuery(db, 'SELECT * FROM airStoredb LIMIT 3')
 
