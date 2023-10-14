@@ -34,15 +34,16 @@ dbListTables(db)
 dbGetQuery(db, 'SELECT * FROM airStoredb LIMIT 3')
 
 # showing which airplane has the lowest associated average departure delay
-dbGetQuery(db, "SELECT flightNum, AVG(DepDelay) As Average_Delay FROM allFlightsDb GROUP BY flightNum" )
+lowAvegDep = dbGetQuery(db, "SELECT flightNum, AVG(DepDelay) As Average_Delay FROM allFlightsDb GROUP BY flightNum" )
 
 
 #showing which cities has the highest number of in flight 
-dbGetQuery(db, "SELECT origin, SUM(taxiin) As highest_no_inbound FROM allFlightsDb GROUP BY origin")
+cityHighflight= dbGetQuery(db, "SELECT origin, SUM(taxiin) As highest_no_inbound FROM allFlightsDb GROUP BY origin")
 
 
 #Getting which company has the highest cancelled flights
-dbGetQuery(db, "SELECT Uniquecarrier, SUM(Cancelled) As No_of_cancelled FROM allFlightsDb GROUP BY Uniquecarrier ")
+comHighCanFlight= dbGetQuery(db, "SELECT Uniquecarrier, SUM(Cancelled) As No_of_cancelled FROM allFlightsDb GROUP BY Uniquecarrier ")
 
 #Getting the highest number of flights. 
 
+df.to_csv 
